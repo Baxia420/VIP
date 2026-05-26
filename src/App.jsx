@@ -12,6 +12,9 @@ import SupervisorDashboard from './pages/SupervisorDashboard';
 import MyPostings from './pages/MyPostings';
 import CreateListingForm from './pages/CreateListingForm';
 import ApplicantReview from './pages/ApplicantReview';
+import CareerRadar from './pages/CareerRadar';
+import PeerForum from './pages/PeerForum';
+import ForumThread from './pages/ForumThread';
 
 export default function App() {
   return (
@@ -26,6 +29,11 @@ export default function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/internship-details" element={<InternshipDetails />} />
         <Route path="/apply" element={<ApplicationForm />} />
+        
+        {/* New Forums / Radar Routes */}
+        <Route path="/career-radar" element={<CareerRadar />} />
+        <Route path="/forum" element={<PeerForum />} />
+        <Route path="/forum/thread/:threadId" element={<ForumThread />} />
         
         {/* Supervisor Routes */}
         <Route path="/supervisor/dashboard" element={<SupervisorDashboard />} />

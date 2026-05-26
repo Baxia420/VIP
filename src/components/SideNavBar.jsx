@@ -61,6 +61,14 @@ export default function SideNavBar() {
               <span className="material-symbols-outlined">dashboard</span>
               <span className="font-label-md text-label-md">Dashboard</span>
             </NavLink>
+            <NavLink to="/career-radar" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
+              <span className="material-symbols-outlined">explore</span>
+              <span className="font-label-md text-label-md">Career Radar</span>
+            </NavLink>
+            <NavLink to="/forum" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
+              <span className="material-symbols-outlined">forum</span>
+              <span className="font-label-md text-label-md">Peer Forum</span>
+            </NavLink>
             <NavLink to="/browse-listings" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
               <span className="material-symbols-outlined">search</span>
               <span className="font-label-md text-label-md">Browse Listings</span>
