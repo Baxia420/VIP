@@ -7,10 +7,10 @@ export default function InternshipDetails() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-surface font-body-md text-body-md text-on-surface antialiased flex h-screen overflow-hidden w-full">
+    <div className="bg-background text-on-background font-body-md h-screen overflow-hidden flex w-full">
       <SideNavBar />
       
-      <main className="flex-1 ml-0 md:ml-64 min-h-screen flex flex-col overflow-y-auto bg-background">
+      <main className="flex-1 ml-0 md:ml-64 overflow-y-auto w-full flex flex-col bg-background">
         <TopNavBar 
           breadcrumbs={[
             { label: 'Home', link: '/dashboard' },

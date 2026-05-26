@@ -13,10 +13,10 @@ export default function ApplicationForm() {
   };
 
   return (
-    <div className="bg-background text-on-background font-body-md antialiased h-screen overflow-hidden flex w-full">
+    <div className="bg-background text-on-background font-body-md h-screen overflow-hidden flex w-full">
       <SideNavBar />
       
-      <main className="flex-1 ml-0 md:ml-64 min-h-screen flex flex-col overflow-y-auto bg-background">
+      <main className="flex-1 ml-0 md:ml-64 overflow-y-auto w-full flex flex-col bg-background">
         <TopNavBar breadcrumbs={[{ label: 'Home', link: '/dashboard' }, { label: 'Browse Listings', link: '/browse-listings' }, { label: 'Application Form' }]} />
         
         <div className="px-margin-mobile md:px-margin-desktop py-12 max-w-[800px] mx-auto w-full flex-1 mb-8">

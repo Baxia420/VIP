@@ -8,6 +8,10 @@ import MyApplications from './pages/MyApplications';
 import ProfilePage from './pages/ProfilePage';
 import InternshipDetails from './pages/InternshipDetails';
 import ApplicationForm from './pages/ApplicationForm';
+import SupervisorDashboard from './pages/SupervisorDashboard';
+import MyPostings from './pages/MyPostings';
+import CreateListingForm from './pages/CreateListingForm';
+import ApplicantReview from './pages/ApplicantReview';
 
 export default function App() {
   return (
@@ -22,6 +26,13 @@ export default function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/internship-details" element={<InternshipDetails />} />
         <Route path="/apply" element={<ApplicationForm />} />
+        
+        {/* Supervisor Routes */}
+        <Route path="/supervisor/dashboard" element={<SupervisorDashboard />} />
+        <Route path="/supervisor/postings" element={<MyPostings />} />
+        <Route path="/supervisor/create-listing" element={<CreateListingForm />} />
+        <Route path="/supervisor/review" element={<ApplicantReview />} />
+
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Router>

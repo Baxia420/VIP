@@ -23,10 +23,10 @@ export default function MyApplications() {
   });
 
   return (
-    <div className="bg-background text-on-background font-body-md text-body-md antialiased h-screen overflow-hidden flex w-full">
+    <div className="bg-background text-on-background font-body-md h-screen overflow-hidden flex w-full">
       <SideNavBar />
       
-      <main className="flex-1 ml-0 md:ml-64 overflow-y-auto w-full">
+      <main className="flex-1 ml-0 md:ml-64 overflow-y-auto w-full flex flex-col bg-background">
         <TopNavBar breadcrumbs={[{ label: 'Home', link: '/dashboard' }, { label: 'My Applications' }]} />
         
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-gutter">

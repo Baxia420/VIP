@@ -7,11 +7,28 @@ export default function Authentication() {
 
   const handleAccessPortal = (e) => {
     e.preventDefault();
-    navigate('/dashboard');
+    const emailInput = document.getElementById('login-email').value;
+    const passwordInput = document.getElementById('login-password').value;
+
+    const studentEmail = import.meta.env.VITE_STUDENT_EMAIL || 'alam.j@graduate.utm.my';
+    const studentPassword = import.meta.env.VITE_STUDENT_PASSWORD || 'password';
+    const supervisorEmail = import.meta.env.VITE_SUPERVISOR_EMAIL || 'supervisor@utm.my';
+    const supervisorPassword = import.meta.env.VITE_SUPERVISOR_PASSWORD || 'password';
+
+    if (emailInput === studentEmail && passwordInput === studentPassword) {
+      localStorage.setItem('role', 'student');
+      navigate('/dashboard');
+    } else if (emailInput === supervisorEmail && passwordInput === supervisorPassword) {
+      localStorage.setItem('role', 'supervisor');
+      navigate('/supervisor/dashboard');
+    } else {
+      alert('Invalid credentials! Please try again.');
+    }
   };
 
   const handleRegister = (e) => {
     e.preventDefault();
+    localStorage.setItem('role', 'student');
     navigate('/profile-setup');
   };
 
