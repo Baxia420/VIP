@@ -29,7 +29,7 @@ export default function BrowseListings() {
         <TopNavBar breadcrumbs={[{ label: 'Home', link: '/dashboard' }, { label: 'Browse Listings' }]} />
         
         <div className="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-base mt-4 mb-8">
-          <header className="mb-6">
+          <header className="mb-6 border-b border-outline-variant pb-6">
             <h2 className="font-h1 text-h1 text-primary mb-2">Browse Listings</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant">Find and apply for premium academic internship opportunities.</p>
           </header>

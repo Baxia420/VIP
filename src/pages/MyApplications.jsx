@@ -29,8 +29,8 @@ export default function MyApplications() {
       <main className="flex-1 ml-0 md:ml-64 overflow-y-auto w-full flex flex-col bg-background">
         <TopNavBar breadcrumbs={[{ label: 'Home', link: '/dashboard' }, { label: 'My Applications' }]} />
         
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-gutter">
-          <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-outline-variant pb-6">
+        <div className="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-base mt-4 mb-8">
+          <header className="mb-6 border-b border-outline-variant pb-6">
             <div>
               <h2 className="font-h1 text-h1 text-primary mb-2">My Applications</h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant">Track and manage your academic internship progress.</p>

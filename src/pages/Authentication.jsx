@@ -4,6 +4,21 @@ import { useNavigate } from 'react-router-dom';
 export default function Authentication() {
   const [tab, setTab] = useState('login');
   const navigate = useNavigate();
+  const [displayText, setDisplayText] = useState('');
+  const fullText = "Academic Excellence & Career Pathways.";
+
+  React.useEffect(() => {
+    let index = 0;
+    setDisplayText('');
+    const interval = setInterval(() => {
+      setDisplayText((prev) => prev + fullText.charAt(index));
+      index++;
+      if (index >= fullText.length) {
+        clearInterval(interval);
+      }
+    }, 60);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleAccessPortal = (e) => {
     e.preventDefault();
@@ -44,22 +59,17 @@ export default function Authentication() {
           />
         </div>
         <div className="absolute inset-0 bg-primary opacity-85 z-10 mix-blend-multiply"></div>
-        <div className="relative z-20 p-12 lg:p-16 flex flex-col h-full justify-between min-h-[600px] w-full">
-          <div>
-            <h2 className="font-h1 text-h1 lg:text-5xl text-white leading-tight max-w-lg mt-16 serif font-bold tracking-wide">
-              Academic Excellence &amp; Career Pathways.
+        <div className="relative z-20 p-12 lg:p-16 flex flex-col h-full justify-center items-center text-center min-h-[600px] w-full">
+          <div className="max-w-xl flex flex-col items-center justify-center">
+            <h2 className="font-h1 text-h1 lg:text-5xl text-white leading-tight serif font-bold tracking-wide min-h-[120px] md:min-h-[160px] lg:min-h-[200px]">
+              {displayText}
+              <span className="animate-pulse border-r-2 border-white ml-1"></span>
             </h2>
-            <p className="font-body-lg text-body-lg lg:text-xl text-surface-variant/90 mt-8 max-w-md leading-relaxed">
+            <p className="font-body-lg text-body-lg lg:text-xl text-surface-variant/90 mt-8 leading-relaxed max-w-md">
               Access the Virtual Internship Portal to connect with premier industry partners and track your professional journey.
             </p>
           </div>
-          <div className="mt-auto">
-            <div className="flex gap-4">
-              <div className="w-16 h-1.5 bg-secondary-container rounded-full"></div>
-              <div className="w-2.5 h-1.5 bg-outline-variant rounded-full opacity-40"></div>
-              <div className="w-2.5 h-1.5 bg-outline-variant rounded-full opacity-40"></div>
-            </div>
-          </div>
+
         </div>
       </div>
 
@@ -170,7 +180,7 @@ export default function Authentication() {
 
           <div className="mt-8 pt-6 border-t border-outline-variant text-center">
             <p className="font-body-sm text-body-sm text-on-surface-variant/80">
-              By continuing, you agree to the <a className="text-primary hover:underline" href="#">Terms of Service</a> and <a className="text-primary hover:underline" href="#">Privacy Policy</a>.
+              By continuing, you agree to the <span onClick={() => navigate('/terms')} className="text-primary hover:underline cursor-pointer">Terms of Service</span> and <span onClick={() => navigate('/privacy')} className="text-primary hover:underline cursor-pointer">Privacy Policy</span>.
             </p>
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function InternshipCard({ id, title, company, status, appliedDate
   };
 
   return (
-    <div className="group bg-surface-container-lowest border border-outline-variant rounded-DEFAULT border-l-4 border-l-secondary-container hover:bg-surface-container-lowest transition-colors flex flex-col md:flex-row md:items-center justify-between p-4 md:p-6 gap-4">
+    <div className="group bg-surface-container-lowest border border-outline-variant rounded-DEFAULT border-l-4 border-l-secondary-container hover:border-l-primary hover:bg-surface-container-low/30 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out flex flex-col md:flex-row md:items-center justify-between p-4 md:p-6 gap-4">
       <div className="flex-1">
         <div className="flex items-center gap-3 mb-1">
           <h3 className="font-label-md text-label-md text-on-surface uppercase tracking-wide">{title}</h3>
