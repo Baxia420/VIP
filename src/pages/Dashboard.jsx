@@ -33,7 +33,7 @@ export default function Dashboard() {
           </header>
 
           {/* Stats Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Stat Card 1 */}
             <div className="bg-surface-container-lowest border border-outline-variant border-l-4 border-l-[#C4860A] rounded-DEFAULT p-6 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow">
               <div>
@@ -64,99 +64,180 @@ export default function Dashboard() {
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: '"FILL" 1' }}>workspace_premium</span>
               </div>
             </div>
+            {/* Stat Card 4 (Career Radar & Trends) */}
+            <div 
+              onClick={() => navigate('/career-radar')}
+              className="bg-surface-container-lowest border border-[#E5E1DA] border-l-4 border-l-[#C4860A] rounded-DEFAULT p-6 flex items-center justify-between shadow-sm hover:shadow-md hover:border-primary/30 transition-all cursor-pointer"
+            >
+              <div>
+                <p className="font-label-sm text-on-surface-variant text-label-sm uppercase tracking-wider mb-1">Career Radar</p>
+                <p className="font-h3 text-on-surface text-h3 font-bold">Python (88%)</p>
+                <p className="text-xs text-on-surface-variant mt-1 flex items-center gap-0.5">
+                  <span className="material-symbols-outlined text-[12px] text-green-600">trending_up</span>
+                  Trending Tech Skill
+                </p>
+              </div>
+              <div className="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+                <span className="material-symbols-outlined" style={{ fontVariationSettings: '"FILL" 1' }}>query_stats</span>
+              </div>
+            </div>
           </div>
 
-          {/* Recent Applications Table Section */}
-          <section className="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT flex flex-col shadow-sm mb-8">
-            <div className="p-6 border-b border-outline-variant flex justify-between items-center">
-              <h3 className="font-h3 text-primary-container text-h3 font-['Newsreader'] serif">Recent Applications</h3>
-              <button 
-                onClick={() => navigate('/my-applications')}
-                className="font-label-md text-primary-container text-label-md hover:underline flex items-center gap-1 cursor-pointer bg-transparent border-none"
-              >
-                View All <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </button>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-surface-variant/50 border-b border-outline-variant">
-                    <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold">Company</th>
-                    <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold">Role</th>
-                    <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold">Date Applied</th>
-                    <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold">Status</th>
-                    <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold text-right">Action</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-outline-variant">
-                  <tr className="hover:bg-surface-container transition-colors">
-                    <td className="p-4 font-body-md text-on-surface font-medium">Petronas</td>
-                    <td className="p-4 font-body-md text-on-surface-variant">Software Engineering Intern</td>
-                    <td className="p-4 font-body-sm text-on-surface-variant">Apr 12, 2026</td>
-                    <td className="p-4">
-                      <span className="inline-block px-3 py-1 bg-[#C4860A]/10 text-[#C4860A] font-label-sm text-label-sm rounded uppercase">Reviewed</span>
-                    </td>
-                    <td className="p-4 text-right">
-                      <button 
-                        onClick={() => navigate('/internship-details')}
-                        className="text-primary-container hover:text-primary-fixed-variant transition-colors cursor-pointer"
-                      >
-                        <span className="material-symbols-outlined">more_vert</span>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-surface-container transition-colors">
-                    <td className="p-4 font-body-md text-on-surface font-medium">Microsoft</td>
-                    <td className="p-4 font-body-md text-on-surface-variant">Data Analyst Intern</td>
-                    <td className="p-4 font-body-sm text-on-surface-variant">Apr 02, 2026</td>
-                    <td className="p-4">
-                      <span className="inline-block px-3 py-1 bg-[#6B7280]/10 text-[#6B7280] font-label-sm text-label-sm rounded uppercase">Pending</span>
-                    </td>
-                    <td className="p-4 text-right">
-                      <button 
-                        onClick={() => navigate('/internship-details')}
-                        className="text-primary-container hover:text-primary-fixed-variant transition-colors cursor-pointer"
-                      >
-                        <span className="material-symbols-outlined">more_vert</span>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-surface-container transition-colors">
-                    <td className="p-4 font-body-md text-on-surface font-medium">Google</td>
-                    <td className="p-4 font-body-md text-on-surface-variant">Frontend Developer Intern</td>
-                    <td className="p-4 font-body-sm text-on-surface-variant">Mar 25, 2026</td>
-                    <td className="p-4">
-                      <span className="inline-block px-3 py-1 bg-[#6B1B1B]/10 text-[#6B1B1B] font-label-sm text-label-sm rounded uppercase">Accepted</span>
-                    </td>
-                    <td className="p-4 text-right">
-                      <button 
-                        onClick={() => navigate('/internship-details')}
-                        className="text-primary-container hover:text-primary-fixed-variant transition-colors cursor-pointer"
-                      >
-                        <span className="material-symbols-outlined">more_vert</span>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-surface-container transition-colors">
-                    <td className="p-4 font-body-md text-on-surface font-medium">DHL</td>
-                    <td className="p-4 font-body-md text-on-surface-variant">IT Support Intern</td>
-                    <td className="p-4 font-body-sm text-on-surface-variant">Mar 15, 2026</td>
-                    <td className="p-4">
-                      <span className="inline-block px-3 py-1 bg-[#6B7280]/10 text-[#6B7280] font-label-sm text-label-sm rounded uppercase">Pending</span>
-                    </td>
-                    <td className="p-4 text-right">
-                      <button 
-                        onClick={() => navigate('/internship-details')}
-                        className="text-primary-container hover:text-primary-fixed-variant transition-colors cursor-pointer"
-                      >
-                        <span className="material-symbols-outlined">more_vert</span>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
+          {/* Lower Grid: Applications & Forums */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            {/* Recent Applications Table Section */}
+            <section className="lg:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT flex flex-col shadow-sm">
+              <div className="p-6 border-b border-outline-variant flex justify-between items-center">
+                <h3 className="font-h3 text-primary-container text-h3 font-['Newsreader'] serif">Recent Applications</h3>
+                <button 
+                  onClick={() => navigate('/my-applications')}
+                  className="font-label-md text-primary-container text-label-md hover:underline flex items-center gap-1 cursor-pointer bg-transparent border-none"
+                >
+                  View All <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-surface-variant/50 border-b border-outline-variant">
+                      <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold">Company</th>
+                      <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold">Role</th>
+                      <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold">Date Applied</th>
+                      <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold">Status</th>
+                      <th className="p-4 font-label-sm text-on-surface-variant text-label-sm font-semibold text-right">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-outline-variant">
+                    <tr className="hover:bg-surface-container transition-colors">
+                      <td className="p-4 font-body-md text-on-surface font-medium">Petronas</td>
+                      <td className="p-4 font-body-md text-on-surface-variant">Software Engineering Intern</td>
+                      <td className="p-4 font-body-sm text-on-surface-variant">Apr 12, 2026</td>
+                      <td className="p-4">
+                        <span className="inline-block px-3 py-1 bg-[#C4860A]/10 text-[#C4860A] font-label-sm text-label-sm rounded uppercase">Reviewed</span>
+                      </td>
+                      <td className="p-4 text-right">
+                        <button 
+                          onClick={() => navigate('/internship-details')}
+                          className="text-primary-container hover:text-primary-fixed-variant transition-colors cursor-pointer"
+                        >
+                          <span className="material-symbols-outlined">more_vert</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-surface-container transition-colors">
+                      <td className="p-4 font-body-md text-on-surface font-medium">Microsoft</td>
+                      <td className="p-4 font-body-md text-on-surface-variant">Data Analyst Intern</td>
+                      <td className="p-4 font-body-sm text-on-surface-variant">Apr 02, 2026</td>
+                      <td className="p-4">
+                        <span className="inline-block px-3 py-1 bg-[#6B7280]/10 text-[#6B7280] font-label-sm text-label-sm rounded uppercase">Pending</span>
+                      </td>
+                      <td className="p-4 text-right">
+                        <button 
+                          onClick={() => navigate('/internship-details')}
+                          className="text-primary-container hover:text-primary-fixed-variant transition-colors cursor-pointer"
+                        >
+                          <span className="material-symbols-outlined">more_vert</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-surface-container transition-colors">
+                      <td className="p-4 font-body-md text-on-surface font-medium">Google</td>
+                      <td className="p-4 font-body-md text-on-surface-variant">Frontend Developer Intern</td>
+                      <td className="p-4 font-body-sm text-on-surface-variant">Mar 25, 2026</td>
+                      <td className="p-4">
+                        <span className="inline-block px-3 py-1 bg-[#6B1B1B]/10 text-[#6B1B1B] font-label-sm text-label-sm rounded uppercase">Accepted</span>
+                      </td>
+                      <td className="p-4 text-right">
+                        <button 
+                          onClick={() => navigate('/internship-details')}
+                          className="text-primary-container hover:text-primary-fixed-variant transition-colors cursor-pointer"
+                        >
+                          <span className="material-symbols-outlined">more_vert</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-surface-container transition-colors">
+                      <td className="p-4 font-body-md text-on-surface font-medium">DHL</td>
+                      <td className="p-4 font-body-md text-on-surface-variant">IT Support Intern</td>
+                      <td className="p-4 font-body-sm text-on-surface-variant">Mar 15, 2026</td>
+                      <td className="p-4">
+                        <span className="inline-block px-3 py-1 bg-[#6B7280]/10 text-[#6B7280] font-label-sm text-label-sm rounded uppercase">Pending</span>
+                      </td>
+                      <td className="p-4 text-right">
+                        <button 
+                          onClick={() => navigate('/internship-details')}
+                          className="text-primary-container hover:text-primary-fixed-variant transition-colors cursor-pointer"
+                        >
+                          <span className="material-symbols-outlined">more_vert</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Recent Forums Section */}
+            <aside className="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT flex flex-col shadow-sm">
+              <div className="p-6 border-b border-outline-variant flex justify-between items-center">
+                <h3 className="font-h3 text-primary-container text-h3 font-['Newsreader'] serif">Recent Discussions</h3>
+                <button 
+                  onClick={() => navigate('/forum')}
+                  className="font-label-md text-primary-container text-label-md hover:underline flex items-center gap-1 cursor-pointer bg-transparent border-none"
+                >
+                  View All <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+              </div>
+              <div className="p-4 flex flex-col gap-3">
+                {[
+                  {
+                    id: 'petronas-interview',
+                    title: 'Petronas Software Engineering Interview Experience',
+                    replies: 24,
+                    time: '2h ago',
+                    avatar: 'ZS'
+                  },
+                  {
+                    id: 'cv-tips',
+                    title: 'Tips for CV formatting to pass ATS systems?',
+                    replies: 15,
+                    time: '5h ago',
+                    avatar: 'NH'
+                  },
+                  {
+                    id: 'startup-vs-glc',
+                    title: 'Choosing between Startup vs GLC for internship',
+                    replies: 42,
+                    time: '1d ago',
+                    avatar: 'KW'
+                  }
+                ].map((thread) => (
+                  <div 
+                    key={thread.id} 
+                    onClick={() => navigate(`/forum/thread/${thread.id}`)}
+                    className="flex items-start gap-3 p-3 hover:bg-surface-variant/30 rounded cursor-pointer transition-colors border border-transparent hover:border-outline-variant/50"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center text-primary font-bold shrink-0 text-xs">
+                      {thread.avatar}
+                    </div>
+                    <div className="flex-grow min-w-0">
+                      <h4 className="font-label-md text-on-surface hover:text-primary transition-colors truncate">
+                        {thread.title}
+                      </h4>
+                      <div className="flex items-center gap-2 text-xs text-on-surface-variant mt-1">
+                        <span>{thread.time}</span>
+                        <span>•</span>
+                        <span className="flex items-center gap-0.5">
+                          <span className="material-symbols-outlined text-[12px]">forum</span>
+                          {thread.replies}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </div>
         </div>
       </main>
     </div>

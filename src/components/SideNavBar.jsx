@@ -45,6 +45,10 @@ export default function SideNavBar() {
               <span className="material-symbols-outlined">group</span>
               <span className="font-label-md text-label-md">Applicants</span>
             </NavLink>
+            <NavLink to="/forum" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
+              <span className="material-symbols-outlined">forum</span>
+              <span className="font-label-md text-label-md">Monitor Forums</span>
+            </NavLink>
             <div className="mt-4 px-2">
               <button 
                 onClick={() => navigate('/supervisor/create-listing')}

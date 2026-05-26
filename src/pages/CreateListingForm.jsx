@@ -201,7 +201,7 @@ export default function CreateListingForm() {
                         id="deadline" 
                         type="date"
                         value={deadline}
-                        onChange={(e) => setDeadline}
+                        onChange={(e) => setDeadline(e.target.value)}
                         required
                       />
                     </div>

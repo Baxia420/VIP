@@ -86,8 +86,8 @@ export default function ProfilePage() {
               </div>
 
               {/* Skills */}
-              <div className="bg-surface-container-lowest border border-outline-variant rounded-lg p-6">
-                <h4 className="font-h3 text-h3 text-on-surface mb-4 pb-2 border-b border-outline-variant flex items-center gap-2">
+              <div className="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-4">
+                <h4 className="font-h3 text-h3 text-on-surface pb-2 border-b border-outline-variant flex items-center gap-2">
                   <span className="material-symbols-outlined text-outline">psychology</span>
                   Core Skills &amp; Competencies
                 </h4>
@@ -103,6 +103,20 @@ export default function ProfilePage() {
                   >
                     <span className="material-symbols-outlined text-[16px]">add</span> Add Skill
                   </button>
+                </div>
+                {/* Advisory Tip Box */}
+                <div className="bg-surface-variant/30 border border-outline-variant rounded-lg p-4 flex items-start gap-3 mt-2">
+                  <span className="material-symbols-outlined text-secondary text-[20px] mt-0.5">lightbulb</span>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">
+                    Not sure what skills to add? Check the{' '}
+                    <span 
+                      onClick={() => navigate('/career-radar')} 
+                      className="text-primary font-semibold hover:underline cursor-pointer"
+                    >
+                      Career Radar &amp; Market Trends
+                    </span>{' '}
+                    to see what UTM employers are actively searching for.
+                  </p>
                 </div>
               </div>
             </div>
